@@ -1,11 +1,11 @@
 import { initResourceHub, initResourceHubEvents } from './resourceHub.js';
 
-let currentPath = [];
+export let currentPath = [];
 
 // Inicializar com arrays vazios em vez de dados hardcoded
-let downloadsDataTemplate = [];
-let downloadsData = [];
-const folderContents = {};
+export let downloadsDataTemplate = [];
+export let downloadsData = [];
+export const folderContents = {};
 
 // Helper function to get file extensions
 function getFileExtension(filePath) {
@@ -638,7 +638,7 @@ function deleteFile(filePath) {
 }
 
 // Função para criar nova pasta com atualização automática dos dados
-function createFolder(folderName) {
+export async function createFolder(folderName) {
     return new Promise(async (resolve, reject) => {
         // Determinar a URL base para requisições
         let baseUrl = '/api/folders';  // Ajustado para um formato mais RESTful
