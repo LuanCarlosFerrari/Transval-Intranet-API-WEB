@@ -16,14 +16,13 @@
     position: relative;
     background-color: var(--bg-black-transparent);
     border-radius: var(--border-radius-md);
-    margin: 0 auto;
-    max-width: var(--container-max-width);
+    width: 100%; /* Added for full width */
     height: calc(100vh - var(--header-height) - 65px - 40px); 
     overflow-y: auto;
     box-shadow: var(--shadow-box);
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch; /* Changed from center to stretch */
     justify-content: center;
 }
 

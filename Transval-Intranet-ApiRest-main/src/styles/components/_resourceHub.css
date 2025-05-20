@@ -1,8 +1,10 @@
 .resource-container {
     padding: var(--spacing-lg);
     color: var(--color-white);
+    width: 100%; /* Added */
     height: 100%;
     overflow-y: auto;
+    box-sizing: border-box; /* Added */
 }
 
 .resource-container h2 {
@@ -16,9 +18,11 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: var(--spacing-xl);
-    max-width: 1200px;
-    margin: 0 auto;
+    /* max-width: 1200px; */ /* Removed */
+    /* margin: 0 auto; */ /* Removed */
+    width: 100%; /* Added */
     padding: var(--spacing-md);
+    box-sizing: border-box; /* Added */
 }
 
 .resource-card {
