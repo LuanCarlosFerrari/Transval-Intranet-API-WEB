@@ -37,4 +37,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     initLogin();
     initMobileMenu();
+
+    // Listener for navigating back to Resource Hub
+    document.addEventListener('navigateToResourceHub', async () => {
+        const contentArea = document.querySelector('.content-area');
+        // Ensure data is fresh before rendering the hub
+        await initializeDownloadsData();
+        contentArea.innerHTML = initResourceHub();
+        initResourceHubEvents();
+    });
 });

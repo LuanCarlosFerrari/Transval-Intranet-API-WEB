@@ -190,7 +190,7 @@ export function initDownloadsSection(selectedCategory = null) {
         return `
             <div class="downloads-container">
                 <div class="titulo-container">
-                    <button class="back-button">
+                    <button id="categoryViewBackButton" class="back-button">
                         Voltar
                     </button>
                     <h2>${selectedCategory.title}</h2>
@@ -1241,6 +1241,15 @@ export function addEventListeners() {
         backToHubBtn.addEventListener('click', () => {
             contentArea.innerHTML = initResourceHub();
             initResourceHubEvents();
+        });
+    }
+
+    // Add listener for the new category view back button
+    const categoryViewBackButton = document.getElementById('categoryViewBackButton');
+    if (categoryViewBackButton) {
+        categoryViewBackButton.addEventListener('click', () => {
+            // Dispatch event to navigate to Resource Hub
+            document.dispatchEvent(new CustomEvent('navigateToResourceHub'));
         });
     }
 }

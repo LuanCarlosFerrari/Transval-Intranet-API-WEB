@@ -141,7 +141,7 @@ export function initResourceHubEvents() {
                             selectedCategory.downloads = folderContents[categoryName];
                         } else {
                             console.warn(`Conteúdo da pasta "${categoryName}" não encontrado ou vazio em folderContents. Defaulting to empty.`);
-                            selectedCategory.downloads = []; 
+                            selectedCategory.downloads = [];
                         }
                         contentArea.innerHTML = initDownloadsSection(selectedCategory);
                         addEventListeners(); // For download items, modals etc.
@@ -174,11 +174,11 @@ export function initResourceHubEvents() {
                 try {
                     await createFolder(sectionName.trim());
                     await initializeDownloadsData(); // Refresh data
-                    
+
                     // Re-render the entire resource hub to show the new section
                     // and ensure event listeners are correctly attached to the new DOM.
                     if (contentArea) {
-                        contentArea.innerHTML = initResourceHub(); 
+                        contentArea.innerHTML = initResourceHub();
                         initResourceHubEvents(); // Re-attach events to the newly rendered hub
                     }
                     alert(`Seção "${sectionName.trim()}" criada com sucesso.`);
