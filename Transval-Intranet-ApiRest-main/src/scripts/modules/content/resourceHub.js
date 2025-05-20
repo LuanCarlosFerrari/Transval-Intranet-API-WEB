@@ -20,6 +20,7 @@ export function initResourceHub() {
     return `
         <div class="resource-container">
             <h2>Portal de Recursos Transval</h2>
+            <button id="addSectionBtn" class="btn btn-primary add-section-btn">Nova Seção</button> 
             
             <div class="resource-main-grid">
                 <div class="resource-card">
@@ -98,6 +99,35 @@ export function initResourceHubEvents() {
             const contentArea = document.querySelector('.content-area');
             contentArea.innerHTML = initQuickContactsSection();
             initQuickContactsEvents();
+        });
+    }
+
+    // Botão para adicionar nova seção
+    const addSectionBtn = document.getElementById('addSectionBtn');
+    if (addSectionBtn) {
+        addSectionBtn.addEventListener('click', () => {
+            const sectionName = prompt("Digite o nome da nova seção:");
+            if (sectionName) {
+                const resourceGrid = document.querySelector('.resource-main-grid');
+                if (resourceGrid) {
+                    const newSectionCard = `
+                        <div class="resource-card">
+                            <div class="resource-icon">
+                                <i class="fas fa-folder"></i> <!-- Ícone genérico de pasta -->
+                            </div>
+                            <div class="resource-content">
+                                <h3>${sectionName}</h3>
+                                <p>Conteúdo da nova seção ${sectionName}.</p>
+                                <a href="javascript:void(0)" class="resource-button">
+                                    <i class="fas fa-eye"></i> Acessar
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                    resourceGrid.insertAdjacentHTML('beforeend', newSectionCard);
+                    // Aqui você pode adicionar lógica para salvar a nova seção ou carregar seu conteúdo específico
+                }
+            }
         });
     }
 }

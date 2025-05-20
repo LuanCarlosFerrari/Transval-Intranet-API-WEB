@@ -122,6 +122,18 @@
     }
 }
 
+/* Styling for the dynamically added New Section button */
+.add-section-btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  /* Assuming .btn and .btn-primary provide base styling like padding, color, etc. */
+  /* You might want to adjust width or max-width if needed */
+  /* e.g., width: fit-content; or max-width: 200px; */
+}
+
 /* Loading indicator styles */
 .loading-container {
     display: flex;
