@@ -98,30 +98,6 @@
     transform: scale(1.05);
 }
 
-/* Media queries para responsividade */
-@media (max-width: 768px) {
-    .resource-main-grid {
-        grid-template-columns: 1fr;
-        padding: var(--spacing-sm);
-    }
-    
-    .resource-card {
-        min-height: auto;
-    }
-    
-    .resource-content h3 {
-        font-size: var(--font-size-md);
-    }
-    
-    .resource-content p {
-        font-size: var(--font-size-base);
-    }
-    
-    .resource-icon i {
-        font-size: 3rem;
-    }
-}
-
 /* Styling for the dynamically added New Section button */
 .add-section-btn {
   display: block;
@@ -129,9 +105,26 @@
   margin-right: auto;
   margin-top: var(--spacing-md);
   margin-bottom: var(--spacing-lg);
-  /* Assuming .btn and .btn-primary provide base styling like padding, color, etc. */
-  /* You might want to adjust width or max-width if needed */
-  /* e.g., width: fit-content; or max-width: 200px; */
+  padding: 10px 20px; /* Adjust padding as needed */
+  background-color: #5f5e5e; /* Gray background */
+  color: white; /* White text */
+  border: none;
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  font-weight: 500; /* Medium font weight */
+  text-align: center;
+  font-size: 1rem; /* Adjust font size as needed */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.add-section-btn:hover {
+  background-color: #444; /* Darker gray on hover */
+  transform: translateY(-2px);
+}
+
+.add-section-btn i {
+  font-size: 0.9em; /* If you add an icon */
 }
 
 /* Loading indicator styles */
